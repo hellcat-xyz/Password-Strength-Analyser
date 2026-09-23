@@ -1,0 +1,63 @@
+PASSWORD STRENGTH ANALYZER - MINI PROJECT REPORT
+=================================================
+
+1. OBJECTIVE
+------------
+To develop a tool that evaluates the strength of user-entered passwords based
+on length, complexity, predictable patterns and uniqueness, while also
+suggesting stronger alternatives.
+
+2. TECHNOLOGIES USED
+--------------------
+- Python
+- Tkinter
+- SQLite
+- hashlib / hmac
+- secrets
+- Regular expressions
+
+3. WORKING
+----------
+The user enters a password into the application. The analyzer checks:
+- Minimum and recommended length
+- Lowercase letters
+- Uppercase letters
+- Digits
+- Special characters
+- Common passwords
+- Sequential patterns
+- Repeated characters
+
+A score out of 100 is calculated and mapped to a strength category.
+The program also estimates password entropy and generates three secure
+alternative passwords.
+
+If the optional username is entered, the user can save the password to
+history. The plaintext password is not stored. Instead, an HMAC-SHA256
+fingerprint is kept in SQLite so the application can detect reuse later.
+
+4. KEY SECURITY CONCEPTS LEARNED
+--------------------------------
+- Longer passwords are generally harder to brute-force.
+- Predictable patterns reduce effective password strength.
+- Password reuse increases account compromise risk.
+- Cryptographically secure random generators should be used for passwords.
+- Plaintext passwords should never be stored.
+- Real authentication systems should use Argon2id, bcrypt or scrypt.
+
+5. EXPECTED OUTPUT
+------------------
+The program displays:
+- Strength label
+- Score out of 100
+- Estimated entropy
+- Passed/failed security checks
+- Recommendations
+- Stronger password alternatives
+- Password reuse warning when history is enabled
+
+6. CONCLUSION
+-------------
+The project demonstrates practical password-security concepts through a simple
+desktop application. It combines password analysis, secure password generation
+and optional password reuse detection in one tool.
